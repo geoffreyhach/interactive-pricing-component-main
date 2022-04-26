@@ -7,33 +7,39 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Interactive pricing component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
-
-  Pageviews
-  $ /month
-
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+<header>
+  <h1>Simple, traffic-based pricing</h1>
+  <p>Sign-up for our 30-day trial. <br>No credit card required.</p>
+</header>
+<main>
+  <div class="card">
+    <label for="price-range"><span id="views"></span>K Pageviews</label>
+    <input type="range" min="0" max ="4" step="1" value="2" id="price-range" name="price-range">
+    <p><span id="price"></span>/month</p>
+    <div class="timeframe">
+      <p>Monthly billing</p>
+      <button class="billing-btn"><div class="btn-selector"></div></button>
+      <p>Yearly billing</p>
+      <p class="sale"> -25%</p>
+    </div>
+    <span class="divider"></span>
+    <ul>
+      <li>Unlimited websites</li>
+      <li>100% data ownership</li>
+      <li>Email reports</li>
+    </ul>
+    <button class="start-btn">Start my trial</button>
   </div>
+
+
+</main>
+<div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="https://geoffreyhach.fr">Geoffrey Hach</a>.
+</div>
+<script src="app.js"></script>
 </body>
 </html>
