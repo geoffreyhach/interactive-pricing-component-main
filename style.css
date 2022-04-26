@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
 
+/* ==========
+    LAYOUT 
+============   */
 * {
     margin: 0;
     padding: 0;
@@ -42,6 +45,10 @@ main {
     max-width: 900px;
 }
 
+/* ==========
+    ELEMENTS 
+============   */
+
 .card {
     display: flex;
     flex-direction: column;
@@ -61,19 +68,6 @@ main {
     
 }
 
-
-
-h1 {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color : hsl(227, 35%, 25%);
-}
-
-header p {
-    font-size: .8rem;
-    font-weight: 600;
-    color : hsl(225, 20%, 60%);
-}
 
 .card label {
     font-size: .8rem;
@@ -144,6 +138,9 @@ header p {
 }
 
 .billing-btn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     border : none;
     background-color: hsl(223, 50%, 87%);
     width: 48px;
@@ -164,14 +161,18 @@ header p {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    transition: 150ms transform ease-out;  
 }
 
 .active {
-    transform: translateX(20px);
+    justify-content: flex-end;
     background-color: hsl(15, 100%, 70%);
 }
 
+.active:hover {
+    justify-content: flex-end;
+    background-color: hsl(15, 100%, 70%);
+    box-shadow: 0px 1px 5px 0px hsl(15, 100%, 70%);
+}
 
 .sale {
     background-color:  hsl(13, 100%, 92%);
@@ -179,6 +180,7 @@ header p {
     border-radius: 20px;
     padding: .3rem;
 }
+
 
 
 
@@ -203,7 +205,7 @@ header p {
     padding: 1rem;
     color :  hsl(223, 50%, 87%);
     cursor: pointer;
-    transition: 200ms color ease-out;
+    transition: 300ms color ease-out;
 }
 
 .start-btn:hover {
@@ -224,9 +226,70 @@ header p {
     text-decoration:underline;
 }
 
-@media screen and (min-width: 1000px) {
+/* ==========
+    TYPO
+============   */
+
+
+
+h1 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color : hsl(227, 35%, 25%);
+}
+
+header p {
+    font-size: .8rem;
+    font-weight: 600;
+    color : hsl(225, 20%, 60%);
+}
+
+/* ==========
+    MEDIA QUERIES
+============   */
+
+
+
+@media screen and (min-width: 700px) {
     main {
-        min-width: 800px;
+        min-width: 700px;
     }
+
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card p {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    #price-range {
+        grid-row: 2;
+        grid-column: span 2;
+    }
+
+    .timeframe {
+        justify-content: center;
+        grid-row: 3;
+        grid-column: span 2;
+    }
+
+
+    .divider {
+        grid-row: 4;
+        grid-column: span 2;
+    }
+
+
+    .card ul {
+        grid-row: 5;
+    }
+
+    .sale::after {
+        content : " discount";
+    }
+    
     
 }

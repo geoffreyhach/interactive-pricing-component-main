@@ -25,8 +25,8 @@ range.addEventListener('input', priceDisplay);
 function priceDisplay() {
     let i = range.value;
 
-    if (btnSelector.classList.contains("active")) {
-    price.innerHTML = `$${(pricing[i].price * 0.75).toFixed(2)}`;
+    if (billingBtn.classList.contains("active")) {
+    price.innerHTML = `<strike style="font-size:.7rem; opacity:.7">$${pricing[i].price.toFixed(2)}</strike> $${(pricing[i].price * 0.75).toFixed(2)}`;
     views.innerHTML = pricing[i].view;
     }
     else { 
@@ -37,7 +37,7 @@ function priceDisplay() {
 };
 
 billingBtn.addEventListener('click', function(){
-    btnSelector.classList.toggle("active");
+    billingBtn.classList.toggle("active");
     priceDisplay();
 
 });
