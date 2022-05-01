@@ -16,9 +16,7 @@ const pricing = [
     price : 40},
 ];
 
-
-price.innerHTML = '$20.00';
-views.innerHTML = '200'
+window.onload = priceDisplay();
 
 range.addEventListener('input', priceDisplay);
 
